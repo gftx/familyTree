@@ -15,7 +15,7 @@ export default function Header() {
       <Box
         component="header"
         sx={{
-          py: 2.5,
+          py: 1,
           px: 2,
           minWidth: '100vw',
           backgroundColor: (theme) =>

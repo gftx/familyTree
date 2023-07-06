@@ -33,17 +33,13 @@ export default function Footer() {
           py: 3,
           px: 2,
           mt: 'auto',
-          minWidth: '100vw',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+          minWidth: '100vw'
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="body1" sx={{ textAlign: 'center' }}>
+          {/* <Typography variant="body1" sx={{ textAlign: 'center' }}>
             My sticky footer can be found here.
-          </Typography>
+          </Typography> */}
           <Copyright />
         </Container>
       </Box>

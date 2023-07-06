@@ -13,7 +13,7 @@ export function Layout({ children }) {
             py: 3,
             px: 5,
             minWidth: '100vw',
-            minHeight: '80vh',
+            minHeight: '85vh',
           }}
         >
           {children}
