@@ -6,7 +6,7 @@ import Link from '@mui/material/Link';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2" color="text.secondary"  sx={{ textAlign: 'center' }}>
       {'Copyright © made by '}
       <Link color="inherit" target='_blank' href="https://github.com/gftx">
         Anton Ivanov
@@ -17,13 +17,13 @@ function Copyright() {
   );
 }
 
-export function Footer() {
+export default function Footer() {
   return (
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'column',
-        minHeight: '20vh',
+        justifyContent: 'center',
+        minWidth: '100vw',
       }}
     >
       <CssBaseline />
@@ -33,6 +33,7 @@ export function Footer() {
           py: 3,
           px: 2,
           mt: 'auto',
+          minWidth: '100vw',
           backgroundColor: (theme) =>
             theme.palette.mode === 'light'
               ? theme.palette.grey[200]
@@ -40,7 +41,7 @@ export function Footer() {
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="body1">
+          <Typography variant="body1" sx={{ textAlign: 'center' }}>
             My sticky footer can be found here.
           </Typography>
           <Copyright />

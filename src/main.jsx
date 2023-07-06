@@ -1,20 +1,32 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
+import { Navigate } from "react-router-dom";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { MainPage, PersonPage } from "./pages";
-import { Layout } from "./views/layout"
+
+import { MainPage, PersonPage, ErrorPage, RootPage } from "./pages";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout><MainPage /></Layout>,
-  },
-  {
-    path: "/person/:personId",
-    element: <Layout><PersonPage /></Layout>,
+    element: <RootPage />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "",
+        element: <Navigate replace to="/main" />
+      },
+      {
+        path: "/main",
+        element: <MainPage />,
+      },
+      {
+        path: "/person/:personId",
+        element: <PersonPage />,
+      },
+    ],
   },
 ]);
 
