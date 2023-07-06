@@ -5,15 +5,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { MainPage, PersonPage } from "./pages";
+import { Layout } from "./views/layout"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainPage />,
+    element: <Layout><MainPage /></Layout>,
   },
   {
     path: "/person/:personId",
-    element: <PersonPage />,
+    element: <Layout><PersonPage /></Layout>,
   },
 ]);
 
