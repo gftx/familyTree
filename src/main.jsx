@@ -5,6 +5,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import "./styles/normalize.scss";
 
 import { MainPage, PersonPage, ErrorPage, RootPage } from "./pages";
 

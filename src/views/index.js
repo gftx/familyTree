@@ -1,3 +1,4 @@
 import { Layout } from "./layout";
+import { MainPersonItem } from './mainPersonItem'
 
-export { Layout };
+export { Layout, MainPersonItem };

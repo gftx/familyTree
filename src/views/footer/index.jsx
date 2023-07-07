@@ -4,19 +4,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary"  sx={{ textAlign: 'center' }}>
-      {'Copyright © made by '}
-      <Link color="inherit" target='_blank' href="https://github.com/gftx">
-        Anton Ivanov
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 export default function Footer() {
   return (
     <Box
@@ -37,10 +24,14 @@ export default function Footer() {
         }}
       >
         <Container maxWidth="sm">
-          {/* <Typography variant="body1" sx={{ textAlign: 'center' }}>
-            My sticky footer can be found here.
-          </Typography> */}
-          <Copyright />
+          <Typography variant="body2" color="text.secondary"  sx={{ textAlign: 'center' }}>
+            {'Copyright © made by '}
+            <Link color="inherit" target='_blank' href="https://github.com/gftx">
+              Anton Ivanov
+            </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+          </Typography>
         </Container>
       </Box>
     </Box>

@@ -7,7 +7,7 @@ export default function PersonPage() {
 
   return (
     <>
-      <Link to="../main">Your Name</Link>
+      <Link to="../main">на Главную</Link>
       <div>PersonPage</div>
     </>
   )
