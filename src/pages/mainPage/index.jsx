@@ -1,9 +1,7 @@
 import Container from '@mui/material/Container';
-import { MainPersonItem } from '../../views';
-import { PERSONS } from '../../const/const';
+import { FamilyTree } from '../index.js';
 
 export default function MainPage() {
-  const persons = PERSONS;
   return (
     <Container 
       component="main" 
@@ -12,13 +10,11 @@ export default function MainPage() {
         mb: 2,
         maxWidth: '80vw',
         display: 'flex',
-        flexWrap: 'wrap',
+        justifyContent: 'center',
         gap: '20px'
       }}
     >
-      {persons.map(item => (
-        <MainPersonItem person={item} key={item.id} />
-      ))}
+      <FamilyTree />
     </Container>
   )
 }

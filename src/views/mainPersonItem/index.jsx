@@ -1,21 +1,20 @@
 import { Avatar, Box, Typography } from "@mui/material";
-import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 
 export function MainPersonItem(props) {
   const { person } = props;
-  console.log(person);
   return (
-    <Link to="../person/1">
+    <Link to={`../person/${person.id}`}>
       <Box
         sx={{
+          border: '1px solid #ffffff',
           display: 'flex',
+          padding: '10px',
           alignItems: 'center',
           flexDirection: 'column',
           width: '200px',
-          height: '350px',
-          border: '1px solid #eeeeee',
+          height: '135px',
           borderRadius: '15px',
           cursor: 'pointer',
           '&:hover': {
@@ -25,13 +24,10 @@ export function MainPersonItem(props) {
           p: 3
         }}
       >
-        <Avatar alt="Родион Дубанов" src="src/assets/images/rodion.jpeg" />
-        <Typography variant="p">Родион Дубанов</Typography>
+        <Avatar alt={person.name} src={person.photo} />
+        <Typography variant="p">{person.name}</Typography>
+        <Typography variant="p">{person.birthdate}</Typography>
       </Box>
     </Link>
   )
-}
-
-MainPersonItem.propTypes = {
-  person: PropTypes.any
 }
