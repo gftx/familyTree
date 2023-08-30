@@ -2,5 +2,10 @@
 .parentsRow {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
+}
+
+.border {
+  border: 1px solid black
 }
