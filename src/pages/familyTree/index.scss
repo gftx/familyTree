@@ -1,11 +1,28 @@
-.partnerRow,
-.parentsRow {
+.genealogy-tree {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-}
+  align-items: center;
 
-.border {
-  border: 1px solid black
+  .rd3t-tree-container {
+    text {
+      fill: #333;
+    }
+
+    .rd3t-node {
+      circle {
+        fill: #fff;
+        stroke: #333;
+        stroke-width: 2px;
+        r: 12px;
+      }
+    }
+
+    .rd3t-linkBase {
+      fill: none;
+      stroke: #333;
+      stroke-width: 2px;
+    }
+  }
 }

@@ -1,67 +1,9 @@
-export const PERSONS = [
-  {
-    id: 0,
-    name: 'Родион Дубанов',
-    birthdate: '24.09.2000',
-    motherId: 3,
-    fatherId: 2,
-    partnerId: 4,
-    childrenIds: [],
-    parentsIds: [2,3],
-    brothersIds: [2],
-    sistersIds: [],
-    photo: 'src/assets/images/rodion.jpeg'
-  },
-  {
-    id: 1,
-    name: 'Артем Дубанов',
-    birthdate: '24.09.2000',
-    motherId: 3,
-    fatherId: 2,
-    partnerId: '',
-    childrenIds: [],
-    parentsIds: [2,3],
-    brothersIds: [0],
-    sistersIds: [],
-    photo: 'src/assets/images/artem.jpeg'
-  },
-  {
-    id: 2,
-    name: 'Юрий Дубанов',
-    birthdate: '',
-    motherId: '',
-    fatherId: '',
-    partnerId: 3,
-    childrenIds: [1, 0],
-    parentsIds: [],
-    brothersIds: [],
-    sistersIds: [],
-    photo: ''
-  },
-  {
-    id: 3,
-    name: 'Гузель Дубанова',
-    birthdate: '',
-    motherId: '',
-    fatherId: '',
-    partnerId: 2,
-    parentsIds: [],
-    childrenIds: [1, 0],
-    brothersIds: [],
-    sistersIds: [],
-    photo: ''
-  },
-  {
-    id: 4,
-    name: 'Алёна',
-    birthdate: '',
-    motherId: '',
-    fatherId: '',
-    partnerId: 0,
-    parentsIds: [],
-    childrenIds: [],
-    brothersIds: [],
-    sistersIds: [],
-    photo: ''
-  },
+// Структура данных для генеалогического древа (здесь предполагается, что у каждой записи есть ID и родительский ID)
+export const genealogyData = [
+  { id: 1, name: 'Петр', parent: null },
+  { id: 2, name: 'Анна', parent: 1 },
+  { id: 3, name: 'Иван', parent: 1 },
+  { id: 4, name: 'Мария', parent: 2 },
+  { id: 5, name: 'Николай', parent: 2 },
+  // Добавьте свои данные здесь
 ];

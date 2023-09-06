@@ -1,68 +1,46 @@
-import { MainPersonItem } from "../../views";
-import { PERSONS } from "../../const/const";
-import "./index.scss";
-import { useEffect } from "react";
+// Import необходимых библиотек и стилей
+import Tree from 'react-d3-tree';
+import { genealogyData } from '../../const/const';
 
-const FamilyTree = () => {
-  const persons = PERSONS;
-  useEffect(() => {
-    console.log({ persons });
-  }, []);
+import './index.scss';
 
-  const renderEmptyParents = () => {
-    return (
-      <div className="partnerRow">
-        <MainPersonItem />
-        <MainPersonItem />
-      </div>
-    );
+
+// Функция для преобразования данных в формат, подходящий для react-d3-tree
+const transformData = (data) => {
+  const treeData = {
+    name: 'Петр', // Имя корневого элемента
+    children: [],
   };
-  const renderEmptyParent = () => <MainPersonItem />;
 
-  const renderFamilyMember = (member, firstRow) => {
-    let parents;
-    if (member.parentsIds.length !== 0 && firstRow) {
-      let ids = [...member.parentsIds, Date.now(), Date.now()];
-      parents = ids.map((childId) => {
-        const parent = persons.find((node) => node.id === childId);
-        if (parent) {
-          return renderFamilyMember(parent);
-        } else {
-          return renderEmptyParent();
-        }
-      });
-    } else if (member.parentsIds.length !== 0) {
-      parents = member.parentsIds.map((childId) => {
-        const parent = persons.find((node) => node.id === childId);
-        return renderFamilyMember(parent);
-      });
+  const idToNodeMap = {};
+
+  data.forEach((person) => {
+    idToNodeMap[person.id] = {
+      name: person.name,
+    };
+  });
+
+  data.forEach((person) => {
+    if (person.parent) {
+      idToNodeMap[person.parent].children = idToNodeMap[person.parent].children || [];
+      idToNodeMap[person.parent].children.push(idToNodeMap[person.id]);
     } else {
-      parents = renderEmptyParents();
+      treeData.children.push(idToNodeMap[person.id]);
     }
+  });
 
-    return (
-      <div key={member.id} className="border">
-        <div className="partnerRow">
-          <MainPersonItem person={member} key={member.id} />
-          {member.partnerId && firstRow && (
-            <>
-              <div>{"-"}</div>
-              <MainPersonItem
-                person={persons[member.partnerId]}
-                key={persons[member.partnerId].id}
-              />
-            </>
-          )}
-        </div>
-        <div className="parentsRow">{parents}</div>
-      </div>
-    );
-  };
-
-  // const familyTree = persons.find((node) => node.id === 1);
-  const renderedTree = renderFamilyMember(persons[0], true);
-
-  return <div>{renderedTree}</div>;
+  return [treeData];
 };
 
-export default FamilyTree;
+// Создание React-компонента для генеалогического древа
+const GenealogyTree = () => {
+  const treeData = transformData(genealogyData);
+
+  return (
+    <div className="genealogy-tree">
+      <Tree data={treeData} orientation="vertical" translate={{ x: 200, y: 50 }} />
+    </div>
+  );
+};
+
+export default GenealogyTree;
