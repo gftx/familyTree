@@ -1,0 +1,31 @@
+/* Ваши стили для PersonNode.css */
+.person-node {
+  text-align: center;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  &_image {
+    margin-bottom: 10px;
+  }
+}
+
+.person-node img {
+  max-width: 100px;
+  border-radius: 50%;
+}
+
+/* Ваши стили для FamilyTree.css */
+.family-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.children {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* Дополнительные стили по вашему усмотрению */

@@ -1,42 +1,67 @@
-// Структура данных для генеалогического древа (здесь предполагается, что у каждой записи есть ID и родительский ID)
-export const familyData = [
+export const PERSONS = [
   {
-    id: 1,
-    name: 'Дедушка',
-    partner: 'Бабушка',
-    partnerId: 8,
-    children: [
-      {
-        id: 2,
-        name: 'Мама',
-        partner: 'Папа',
-        partnerId: 9,
-        children: [
-          {
-            id: 3,
-            name: 'Родион',
-          },
-          {
-            id: 4,
-            name: 'Брат',
-          },
-          {
-            id: 5,
-            name: 'Сестра',
-          },
-        ],
-      },
-    ],
+    id: 0,
+    name: 'Родион Дубанов',
+    birthdate: '24.09.2000',
+    motherId: 3,
+    fatherId: 2,
+    partnerId: 4,
+    childrenIds: [],
+    parentsIds: [2,3],
+    brothersIds: [2],
+    sistersIds: [],
+    photo: 'src/assets/images/rodion.jpeg'
   },
   {
-    id: 6,
-    name: 'Дядя',
-    partner: 'Тётя',
-    children: [
-      {
-        id: 7,
-        name: 'Племянник',
-      },
-    ],
+    id: 1,
+    name: 'Артем Дубанов',
+    birthdate: '24.09.2000',
+    motherId: 3,
+    fatherId: 2,
+    partnerId: '',
+    childrenIds: [],
+    parentsIds: [2,3],
+    brothersIds: [0],
+    sistersIds: [],
+    photo: 'src/assets/images/artem.jpeg'
+  },
+  {
+    id: 2,
+    name: 'Юрий Дубанов',
+    birthdate: '',
+    motherId: '',
+    fatherId: '',
+    partnerId: 3,
+    childrenIds: [1, 0],
+    parentsIds: [],
+    brothersIds: [],
+    sistersIds: [],
+    photo: ''
+  },
+  {
+    id: 3,
+    name: 'Гузель Дубанова',
+    birthdate: '',
+    motherId: '',
+    fatherId: '',
+    partnerId: 2,
+    parentsIds: [],
+    childrenIds: [1, 0],
+    brothersIds: [],
+    sistersIds: [],
+    photo: ''
+  },
+  {
+    id: 4,
+    name: 'Алёна',
+    birthdate: '',
+    motherId: '',
+    fatherId: '',
+    partnerId: 0,
+    parentsIds: [],
+    childrenIds: [],
+    brothersIds: [],
+    sistersIds: [],
+    photo: ''
   },
 ];
