@@ -16,7 +16,7 @@ const FamilyTree = ({ familyData }) => {
     );
   };
 
-  return <div className="family-tree">{renderTree(2)}</div>; // Начнем с корневого члена семьи
+  return <div className="family-tree">{renderTree(5)}</div>; // Начнем с корневого члена семьи
 };
 
 export default FamilyTree;
