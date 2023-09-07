@@ -1,5 +1,6 @@
 import Container from "@mui/material/Container";
 import { FamilyTree } from "../index.js";
+import { familyData } from "../../const/const.js";
 
 export default function MainPage() {
   return (
@@ -12,7 +13,7 @@ export default function MainPage() {
         justifyContent: "center",
       }}
     >
-      <FamilyTree />
+      <FamilyTree familyData={familyData} />
     </Container>
   );
 }
